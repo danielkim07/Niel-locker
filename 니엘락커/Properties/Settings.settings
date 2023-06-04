@@ -5,5 +5,8 @@
     <Setting Name="비밀번호" Type="System.String" Scope="User">
       <Value Profile="(Default)">1111</Value>
     </Setting>
+    <Setting Name="locking" Type="System.String" Scope="User">
+      <Value Profile="(Default)">is</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -34,5 +34,17 @@ namespace 니엘락커.Properties {
                 this["비밀번호"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("is")]
+        public string locking {
+            get {
+                return ((string)(this["locking"]));
+            }
+            set {
+                this["locking"] = value;
+            }
+        }
     }
 }
