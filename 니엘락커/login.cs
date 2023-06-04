@@ -18,7 +18,7 @@ namespace 니엘락커
         {
             InitializeComponent();
             this.TopMost = true;
-            bannerAds1.ShowAd(468, 60, "w68j2zsswe3o");
+            
             
         }
 
@@ -35,6 +35,7 @@ namespace 니엘락커
             if(textBox1.Text == Properties.Settings.Default.비밀번호)
             {
                 //Process.Start("explorer.exe");
+                Properties.Settings.Default.locking = "un";
                 WIN32Helper.ShowTaskbar();
                 Application.Exit();
             }

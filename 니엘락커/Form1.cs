@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using static System.Net.Mime.MediaTypeNames;
 using AdsJumboWinForm;
+using System.Runtime.Remoting.Contexts;
 
 namespace 니엘락커
 {
@@ -64,8 +65,37 @@ namespace 니엘락커
 
         private void button2_Click(object sender, EventArgs e)
         {
-            setting frm= new setting();
+
+            /*TopMost = false;
+            string t메시지 = "설정에 접근하려면 기존 비밀번호나 복구키를 입력해야합니다."; string t타이틀 = "니엘락커";
+            string t입력값 = Microsoft.VisualBasic.Interaction.InputBox(t메시지, t타이틀, "기존 비밀번호나 복구키를 입력하세요.");
+            TopMost = true;
+            if (t입력값 == Properties.Settings.Default.비밀번호)
+            {
+                setting frm = new setting();
+                frm.ShowDialog();
+            }else
+            {
+                MessageBox.Show(new Form { TopMost = true }, "기존 비밀번호 또는 복구키와 다릅니다","니엘락커",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }*/
+
+            setting frm = new setting();
             frm.ShowDialog();
+
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Properties.Settings.Default.locking == "is")
+            {
+                e.Cancel= true;
+                return;
+            }
+            else if (Properties.Settings.Default.locking == "un")
+            {
+                this.TopMost = false;
+                MessageBox.Show("잠금해제되었습니다", "니엘락커", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }
